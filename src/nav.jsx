@@ -52,7 +52,7 @@ const Nav = () => {
             <X />
           </div>
           <h1 className="text-2xl pt-6">Maxis 25</h1>
-          <ul className="space-y-[48px] bg-black text-left text-lg text-white pl-2 mx-3 pt-[40px]">
+          <ul className="space-y-[60px] bg-black text-left text-lg text-white pl-2 mx-3 pt-[60px]">
             {navItems.map((items) => {
               const isActive = location.pathname === items.href;
               return (
