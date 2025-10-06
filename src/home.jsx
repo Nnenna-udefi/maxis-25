@@ -26,11 +26,11 @@ const Home = () => {
       >
         <div className="lg:h-[600px]  p-4  block lg:flex justify-between text-center items-center text-white">
           <div className="w-full flex flex-col items-center md:items-start justify-center px-4">
-            <div className="flex gap-3 items-center date py-2 px-4 rounded-full md:text-sm text-[12px] mb-4">
+            <div className="flex gap-3 items-center date py-2 px-4 rounded-full text-sm w-fit mb-4">
               <Calendar />
               <p>October 31 - November 2, 2025</p>
             </div>
-            <div className="flex gap-1 md:gap-3 items-center py-2 text-base md:text-lg mb-4">
+            <div className="flex gap-1 md:gap-3 items-center py-2 w-fit text-base md:text-lg mb-4">
               <MapPin />
               <p>Cedar Court Hotel, Bradford</p>
             </div>
