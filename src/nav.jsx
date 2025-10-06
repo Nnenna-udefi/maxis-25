@@ -1,7 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { useRef } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
   { id: 1, text: "Home", href: "/" },
@@ -9,29 +9,12 @@ const navItems = [
 ];
 const Nav = () => {
   const [nav, showNav] = useState(false);
-  const navRef = useRef < HTMLDivElement > null;
-  //   const pathname = usePathname();
+  const location = useLocation();
 
   const handleNav = () => {
     showNav((prev) => !prev);
   };
 
-  const handleClickOutside = (event) => {
-    if (navRef.current && !navRef.current.contains(event.target)) {
-      showNav(false);
-    }
-  };
-
-  useEffect(() => {
-    if (nav) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [nav]);
   return (
     <div className="text-white ">
       <div className="flex bg-[#1c2028] justify-between md:text-lg text-base p-6 md:px-12">
@@ -40,14 +23,14 @@ const Nav = () => {
         <div>
           <ul className="gap-10 text-xl hidden md:flex">
             {navItems.map((items) => {
-              // const isActive = pathname === items.href;
+              const isActive = location.pathname === items.href;
               return (
                 <li
                   key={items.id}
-                  // className={`${isActive ? `border-b` : `border-none`}`}
+                  className={`${isActive ? `border-b` : `border-none`}`}
                 >
                   {" "}
-                  <a href={items.href}>{items.text}</a>
+                  <Link to={items.href}>{items.text}</Link>
                 </li>
               );
             })}
@@ -71,11 +54,14 @@ const Nav = () => {
           <h1 className="text-2xl pt-6">Maxis 25</h1>
           <ul className="space-y-[48px] bg-black text-white pl-2 mx-3 pt-[40px]">
             {navItems.map((items) => {
-              // const isActive = pathname === items.href;
+              const isActive = location.pathname === items.href;
               return (
-                <li key={items.id}>
+                <li
+                  key={items.id}
+                  className={`${isActive ? `border-b` : `border-none`}`}
+                >
                   {" "}
-                  <a href={items.href}>{items.text}</a>
+                  <Link to={items.href}>{items.text}</Link>
                 </li>
               );
             })}

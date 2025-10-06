@@ -1,5 +1,9 @@
 import React from "react";
 import { events } from "./constants";
+import { Link } from "react-router-dom";
+import { MapPin, Calendar } from "lucide-react";
+import Nav from "./nav";
+import LiveSection from "./liveSection";
 
 const Home = () => {
   const todayEvent =
