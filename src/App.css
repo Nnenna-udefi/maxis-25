@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+@import "tailwindcss";
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-cinzel: "Cinzel", serif;
+  --font-merriweather: "Merriweater", serif;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+body {
+  font-family: var(--font-poppins);
+}
+.heading {
+  background: linear-gradient(to bottom, #005c48, #1aa584);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.date {
+  background: linear-gradient(to left, rgb(88, 88, 212), #1338be);
+}
