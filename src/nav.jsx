@@ -18,7 +18,7 @@ const Nav = () => {
   return (
     <div className="text-white ">
       <div className="flex bg-[#1c2028] justify-between md:text-lg text-base p-6 md:px-12">
-        <h1 className="text-2xl">Maxis 25</h1>
+        <h1 className="text-2xl md:text-4xl font-unica-one">Maxis 25'</h1>
 
         <div>
           <ul className="gap-10 text-xl hidden md:flex">

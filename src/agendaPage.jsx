@@ -2,13 +2,14 @@ import React from "react";
 import { events } from "./constants";
 import Nav from "./nav";
 import AgendaCard from "./agendaCard";
+import Footer from "./footer";
 
 const AgendaPage = () => {
   return (
     <div>
       <Nav />
       <div
-        className="py-12 px-4 text-white"
+        className="py-12 md:px-12 px-4 text-white"
         style={{
           backgroundColor: "#111",
           backgroundImage:
@@ -17,14 +18,22 @@ const AgendaPage = () => {
           backgroundSize: "50px 50px",
         }}
       >
-        <h2 className="text-3xl font-bold text-[#1338BE] mb-6 text-center">
-          Event Agenda
+        <h2 className="text-3xl md:text-5xl font-bold font-merriweather text-[#00A8E8] mb-6 text-center">
+          🪩 Event Agenda
         </h2>
-        <div className="max-w-[600px] mx-auto">
+        <div className="mx-auto pb-6 block md:grid grid-cols-2 justify-items-center gap-10">
           {events.map((event, index) => (
-            <AgendaCard key={index} event={event} />
+            <div
+              key={index}
+              className={
+                index === events.length - 1 ? "col-span-2 mx-auto" : ""
+              }
+            >
+              <AgendaCard event={event} />
+            </div>
           ))}
         </div>
+        <Footer />
       </div>
     </div>
   );

@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import { MapPin, Calendar } from "lucide-react";
 import Nav from "./nav";
 import LiveSection from "./liveSection";
+import Footer from "./footer";
 
 const Home = () => {
-  const todayEvent =
-    events.find(
-      (event) =>
-        new Date(event.date).toDateString() === new Date().toDateString()
-    ) || events[0];
+  const allActivities = events.flatMap((event) =>
+    event.activities.map((activity) => ({
+      ...activity,
+      date: event.date,
+    }))
+  );
   return (
     <div>
       <Nav />
@@ -25,15 +27,21 @@ const Home = () => {
         }}
       >
         <div className="lg:h-[600px]  p-4  block lg:flex justify-between text-center items-center text-white">
-          <div className="w-full flex flex-col items-center md:items-start justify-center px-4">
-            <div className="flex gap-3 items-center date py-2 px-4 rounded-full text-sm w-fit mb-4">
+          <div className="w-full flex flex-col items-center md:items-start justify-center">
+            <div className="flex gap-3 items-center date py-2 px-4 rounded-full text-sm mb-4">
               <Calendar />
               <p>October 31 - November 2, 2025</p>
             </div>
-            <div className="flex gap-1 md:gap-3 items-center py-2 w-fit text-base md:text-lg mb-4">
+            <Link
+              to={
+                "https://www.google.com/maps/place/Cedar+Court+Hotel+Bradford/@53.7702198,-1.7540776,17z/data=!3m1!4b1!4m9!3m8!1s0x487be12a2f03fd3d:0x321e44ef1354c994!5m2!4m1!1i2!8m2!3d53.7702198!4d-1.7515027!16s%2Fg%2F1tls2d6_?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D"
+              }
+              target="_blank"
+              className="flex gap-1 md:gap-3 items-center py-2 text-base md:text-lg mb-4"
+            >
               <MapPin />
               <p>Cedar Court Hotel, Bradford</p>
-            </div>
+            </Link>
             <h1 className="heading font-merriweather md:leading-24 text-white uppercase text-6xl lg:text-8xl font-extrabold pb-2">
               Maxis 25'
             </h1>
@@ -50,10 +58,11 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="w-full px-4 mt-20 md:mt-0">
-            <LiveSection activities={todayEvent.activities} />
+          <div className="w-full px-4 mt-20 lg:mt-0">
+            <LiveSection activities={allActivities} />
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );
