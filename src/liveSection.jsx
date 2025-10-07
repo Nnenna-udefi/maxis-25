@@ -73,14 +73,14 @@ const LiveSection = ({ activities, date }) => {
       {eventEnded ? (
         <p className="text-gray-500 italic">The event has ended.</p>
       ) : (
-        <div>
+        <div className="flex flex-col items-center justify-center">
           {/* when live now is clicked, it goes back to what is live now */}
-          <h2
-            className="text-3xl md:text-5xl font-merriweather font-bold cursor-pointer text-black mb-3"
+          <div
+            className="text-2xl w-fit text-center font-unica-one py-2 px-4 mt-6 md:text-4xl rounded-md live text-white font-bold cursor-pointer mb-3 transition duration-300 transform hover:scale-105"
             onClick={goCurrent}
           >
             Live Now
-          </h2>
+          </div>
           {current ? (
             <div className="p-3 bg-[#32a58c] border-l-4 border-[#005c48]">
               <p className="text-sm md:text-base text-black">

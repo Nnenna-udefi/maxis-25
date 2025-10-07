@@ -27,6 +27,10 @@ body {
   background: linear-gradient(to left, rgb(88, 88, 212), #1338be);
 }
 
+.live {
+  background: linear-gradient(to left, #1c2028, #1338be);
+}
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 5px;

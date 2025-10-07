@@ -51,7 +51,7 @@ const Home = () => {
             <div className="pt-6">
               <Link
                 to="/agenda"
-                className="text-white border hover:bg-white hover:text-black rounded-full py-4 px-6 text-lg md:text-xl"
+                className="text-white transition duration-300 transform hover:scale-105 border hover:bg-white hover:text-black rounded-full py-4 px-6 text-lg md:text-xl"
               >
                 View Agenda
               </Link>
