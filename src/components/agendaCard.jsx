@@ -1,7 +1,7 @@
 const colors = ["border-red-500", "border-yellow-500", "border-blue-500"];
 const AgendaCard = ({ event }) => {
   return (
-    <div className="py-4 max-w-[500px]">
+    <div className="py-4 max-w-[500px] w-[500px]">
       <div
         style={{ border: "1px dashed #ccc", padding: "1rem", margin: "1rem 0" }}
         className="md:text-xl text-lg max-w-full"
