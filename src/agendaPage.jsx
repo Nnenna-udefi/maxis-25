@@ -1,8 +1,7 @@
-import React from "react";
-import { events } from "./constants";
-import Nav from "./nav";
-import AgendaCard from "./agendaCard";
-import Footer from "./footer";
+import { events } from "./utils/constants";
+import Nav from "./components/nav";
+import AgendaCard from "./components/agendaCard";
+import Footer from "./components/footer";
 
 const AgendaPage = () => {
   return (

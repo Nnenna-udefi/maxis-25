@@ -1,4 +1,3 @@
-import React from "react";
 const colors = ["border-red-500", "border-yellow-500", "border-blue-500"];
 const AgendaCard = ({ event }) => {
   return (

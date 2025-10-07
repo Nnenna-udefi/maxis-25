@@ -1,6 +1,5 @@
-import React from "react";
 import { useState, useEffect } from "react";
-import { parseTime } from "./constants";
+import { parseTime } from "../utils/constants";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const LiveSection = ({ activities, date }) => {
@@ -71,18 +70,18 @@ const LiveSection = ({ activities, date }) => {
     <div className="p-4 md:py-6 w-full text-lg max-h-[500px] md:text-xl flex flex-col bg-white justify-center border-3  rounded-lg shadow  my-6">
       {/* if event hasn't started show live now, live, prv & next divs else show event has ended */}
       {eventEnded ? (
-        <p className="text-gray-500 italic">The event has ended.</p>
+        <p className="text-gray-700 italic">The event has ended.</p>
       ) : (
         <div className="flex flex-col items-center justify-center">
           {/* when live now is clicked, it goes back to what is live now */}
           <div
-            className="text-2xl w-fit text-center font-unica-one py-2 px-4 mt-6 md:text-4xl rounded-md live text-white font-bold cursor-pointer mb-3 transition duration-300 transform hover:scale-105"
+            className="text-2xl w-fit text-center font-cinzel py-2 px-4 mt-6 md:text-4xl rounded-md live text-white font-bold cursor-pointer mb-3 transition duration-300 transform hover:scale-105"
             onClick={goCurrent}
           >
             Live Now
           </div>
           {current ? (
-            <div className="p-3 bg-[#32a58c] border-l-4 border-[#005c48]">
+            <div className="p-3 bg-[#97a9ec] border-l-4 border-[#1338be]">
               <p className="text-sm md:text-base text-black">
                 {current.startTime} - {current.endTime}
               </p>
@@ -92,7 +91,7 @@ const LiveSection = ({ activities, date }) => {
               </h3>
             </div>
           ) : (
-            <p className="text-gray-500">Event Upcoming!!!</p>
+            <p className="text-gray-700">Event Upcoming!!!</p>
           )}
         </div>
       )}
@@ -113,7 +112,7 @@ const LiveSection = ({ activities, date }) => {
                 </div>
               </div>
             ) : (
-              <p className="text-gray-400">None</p>
+              <p className="text-gray-600">None</p>
             )}
           </div>
           <div className="mt-10 md:mt-0">
@@ -131,7 +130,7 @@ const LiveSection = ({ activities, date }) => {
                 </div>
               </div>
             ) : (
-              <p className="text-gray-400">None</p>
+              <p className="text-gray-600">None</p>
             )}
           </div>
         </div>

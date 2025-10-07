@@ -1,10 +1,9 @@
-import React from "react";
-import { events } from "./constants";
+import { events } from "./utils/constants";
 import { Link } from "react-router-dom";
 import { MapPin, Calendar } from "lucide-react";
-import Nav from "./nav";
-import LiveSection from "./liveSection";
-import Footer from "./footer";
+import Nav from "./components/nav";
+import LiveSection from "./components/liveSection";
+import Footer from "./components/footer";
 
 const Home = () => {
   const allActivities = events.flatMap((event) =>
@@ -28,7 +27,7 @@ const Home = () => {
       >
         <div className="lg:h-[600px]  p-4  block lg:flex justify-between text-center items-center text-white">
           <div className="w-full flex flex-col items-center md:items-start justify-center">
-            <div className="flex gap-3 items-center date py-2 px-4 rounded-full text-sm mb-4">
+            <div className="flex gap-2 items-center date py-2 px-4 rounded-full text-sm mb-4">
               <Calendar />
               <p>October 31 - November 2, 2025</p>
             </div>
