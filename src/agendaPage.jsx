@@ -19,7 +19,7 @@ const AgendaPage = () => {
         }}
       >
         <h2 className="text-3xl md:text-5xl font-bold font-merriweather text-[#00A8E8] mb-6 text-center">
-          🪩 Event Agenda
+          🪩 Conference Agenda
         </h2>
         <div className="mx-auto pb-6 block md:grid grid-cols-2 justify-items-center gap-10">
           {events.map((event, index) => (
