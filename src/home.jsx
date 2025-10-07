@@ -16,7 +16,7 @@ const Home = () => {
     <div>
       <Nav />
       <div
-        className="relative bg-cover p-6 md:p-12  min-h-screen "
+        className="relative bg-cover p-6 md:px-12 md:pt-12 md:pb-4  min-h-screen "
         style={{
           backgroundColor: "#111",
           backgroundImage:
