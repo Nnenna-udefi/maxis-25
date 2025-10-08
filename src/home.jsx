@@ -16,7 +16,7 @@ const Home = () => {
     <div>
       <Nav />
       <div
-        className=" p-6 md:px-12 md:pt-12 md:pb-4 h-screen"
+        className=" p-6 md:px-12 md:pt-12 md:pb-4 max-h-screen"
         style={{
           backgroundColor: "#111",
           backgroundImage:
