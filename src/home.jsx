@@ -44,7 +44,7 @@ const Home = () => {
             <h1 className="heading font-merriweather md:leading-24 text-white uppercase text-6xl lg:text-8xl font-extrabold pb-2">
               Maxis 25'
             </h1>
-            <p className="text-white font-cinzel italic uppercase md:text-5xl text-3xl font-extrabold pb-4">
+            <p className="text-white font-cinzel py-6 italic uppercase md:text-5xl text-3xl font-extrabold pb-4">
               Conference
             </p>
             <div className="pt-6">
