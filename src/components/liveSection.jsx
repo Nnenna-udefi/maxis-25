@@ -29,9 +29,6 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, [activities, date]);
 
-
-
-
   const showActivity = (index) => {
     if (index < 0 || index >= activities.length) return null;
     return activities[index];
@@ -62,9 +59,6 @@ const goCurrent = () => {
 
   setCurrentIndex(index >= 0 ? index : null);
 };
-
-
-
 
   const current = showActivity(currentIndex);
   const prev = showActivity((currentIndex ?? -1) - 1);
