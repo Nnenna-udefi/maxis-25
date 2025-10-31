@@ -112,10 +112,10 @@ const LiveSection = ({ activities, date }) => {
             <div className="flex flex-col justify-center items-center gap-4">
               <CalendarArrowDown color="#000" size={50} />
               <p className="text-gray-700 font-extrabold">
-                The event is not yet Live!
+                There is no event live now.
               </p>
               <p className="text-black text-sm">
-                The Conference starts on October 31st, 2025
+                {/* The Conference starts on October 31st, 2025 */}
               </p>
             </div>
           )}
