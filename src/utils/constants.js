@@ -286,9 +286,7 @@ export const events = [
 ];
 
 export function parseTime(timeStr, dateStr) {
-  const baseDate = new Date(dateStr); // parse event date
-  // // Use today's date if none is provided (avoids Invalid Date)
-  // const baseDate = dateStr ? new Date(dateStr) : new Date();
+  const baseDate = new Date(dateStr);
   const hasModifier = timeStr.includes("AM") || timeStr.includes("PM");
   let hours, minutes;
 
@@ -306,7 +304,9 @@ export function parseTime(timeStr, dateStr) {
     baseDate.getMonth(),
     baseDate.getDate(),
     hours,
-    minutes
+    minutes,
+    0,   // seconds
+    0    // milliseconds
   );
 
   console.log("Parsed dateStr:", baseDate.toString());
