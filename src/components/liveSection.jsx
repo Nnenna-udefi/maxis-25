@@ -41,11 +41,6 @@ const LiveSection = ({ activities, date }) => {
       setEventEnded(now > lastEnd);
     };
 
-    console.log(
-      "Sorted activities:",
-      sortedActivities.map((a) => `${a.date} ${a.startTime}`)
-    );
-
     checkCurrentActivity();
     const interval = setInterval(checkCurrentActivity, 60000);
     return () => clearInterval(interval);
