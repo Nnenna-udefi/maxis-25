@@ -14,6 +14,8 @@ const LiveSection = ({ activities, date }) => {
         const start = parseTime(a.startTime, date);
         const end = parseTime(a.endTime, date);
         return now >= start && now <= end;
+
+        console.log('Start:', start, 'End:', end, 'Now:', now);
       });
 
       setCurrentIndex(index >= 0 ? index : null);
@@ -30,7 +32,7 @@ const LiveSection = ({ activities, date }) => {
 const interval = setInterval(checkCurrentActivity, 10000); 
     return () => clearInterval(interval);
   }, [activities, date]);
-console.log('Start:', start, 'End:', end, 'Now:', now);
+
 
   const showActivity = (index) => {
     if (index < 0 || index >= activities.length) return null;
