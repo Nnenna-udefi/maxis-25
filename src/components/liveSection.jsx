@@ -24,11 +24,7 @@ const index = activities.findIndex((a) => {
   activities.forEach((a) => {
   const start = parseTime(a.startTime, date);
   const end = parseTime(a.endTime, date);
-  console.log(
-    `${a.name}: ${a.startTime}–${a.endTime}`,
-    "→ start:", start.toLocaleString(),
-    "end:", end.toLocaleString()
-  );
+  
 });
 
     // Update UI states
