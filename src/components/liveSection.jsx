@@ -61,8 +61,10 @@ const goCurrent = () => {
 +   const end = parseTime(a.endTime, date);
     return now >= start && now <= end;
   });
+
   setCurrentIndex(index >= 0 ? index : null);
 };
+
 
 
   const current = showActivity(currentIndex);
