@@ -10,11 +10,10 @@ const LiveSection = ({ activities, date }) => {
 useEffect(() => {
   const checkCurrentActivity = () => {
     const now = new Date();
+    console.log("⏰ Checking current activity at:", now.toLocaleTimeString());
     const index = activities.findIndex((a) => {
--     const start = parseTime(a.startTime, date);
--     const end = parseTime(a.endTime, date);
-+     const start = parseTime(a.startTime, date);
-+     const end = parseTime(a.endTime, date);
+      const start = parseTime(a.startTime, date);
+      const end = parseTime(a.endTime, date);
       return now >= start && now <= end;
     });
 
@@ -25,10 +24,11 @@ useEffect(() => {
   };
 
   checkCurrentActivity();
-- const interval = setInterval(checkCurrentActivity, 60000);
-+ const interval = setInterval(checkCurrentActivity, 10000);
+
+  const interval = setInterval(checkCurrentActivity, 10000);
   return () => clearInterval(interval);
 }, [activities, date]);
+
 
 
 
