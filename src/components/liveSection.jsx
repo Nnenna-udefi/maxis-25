@@ -55,10 +55,10 @@ useEffect(() => {
 const goCurrent = () => {
   const now = new Date();
   const index = activities.findIndex((a) => {
--   const start = parseTime(a.startTime);
--   const end = parseTime(a.endTime);
-+   const start = parseTime(a.startTime, date);
-+   const end = parseTime(a.endTime, date);
+    const start = parseTime(a.startTime);
+    const end = parseTime(a.endTime);
+    const start = parseTime(a.startTime, date);
+    const end = parseTime(a.endTime, date);
     return now >= start && now <= end;
   });
 
