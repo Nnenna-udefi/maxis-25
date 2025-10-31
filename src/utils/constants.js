@@ -308,4 +308,6 @@ export function parseTime(timeStr, dateStr) {
     hours,
     minutes
   );
+
+  console.log("Parsed dateStr:", baseDate.toString());
 }
