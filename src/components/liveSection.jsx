@@ -7,31 +7,29 @@ const LiveSection = ({ activities, date }) => {
   const [eventEnded, setEventEnded] = useState(false);
 
   // Automatically detect current or ended state
-  useEffect(() => {
-    const checkCurrentActivity = () => {
-      const now = new Date();
-      const index = activities.findIndex((a) => {
-        const start = parseTime(a.startTime, date);
-        const end = parseTime(a.endTime, date);
-        return now >= start && now <= end;
+useEffect(() => {
+  const checkCurrentActivity = () => {
+    const now = new Date();
+    const index = activities.findIndex((a) => {
+-     const start = parseTime(a.startTime, date);
+-     const end = parseTime(a.endTime, date);
++     const start = parseTime(a.startTime, date);
++     const end = parseTime(a.endTime, date);
+      return now >= start && now <= end;
+    });
 
-        console.log('Start:', start, 'End:', end, 'Now:', now);
-      });
+    setCurrentIndex(index >= 0 ? index : null);
 
-      setCurrentIndex(index >= 0 ? index : null);
+    const lastEnd = parseTime(activities[activities.length - 1].endTime, date);
+    setEventEnded(now > lastEnd);
+  };
 
-      // Check if the entire event has ended
-      const lastEnd = parseTime(
-        activities[activities.length - 1].endTime,
-        date
-      );
-      setEventEnded(now > lastEnd);
-    };
+  checkCurrentActivity();
+- const interval = setInterval(checkCurrentActivity, 60000);
++ const interval = setInterval(checkCurrentActivity, 10000);
+  return () => clearInterval(interval);
+}, [activities, date]);
 
-    checkCurrentActivity();
-const interval = setInterval(checkCurrentActivity, 10000); 
-    return () => clearInterval(interval);
-  }, [activities, date]);
 
 
   const showActivity = (index) => {
@@ -54,17 +52,18 @@ const interval = setInterval(checkCurrentActivity, 10000);
     });
   };
 
-  const goCurrent = () => {
-    const now = new Date();
-    const index = activities.findIndex((a) => {
-    const start = parseTime(a.startTime, date);
-const end = parseTime(a.endTime, date);
-      return now >= start && now <= end;
-    });
+const goCurrent = () => {
+  const now = new Date();
+  const index = activities.findIndex((a) => {
+-   const start = parseTime(a.startTime);
+-   const end = parseTime(a.endTime);
++   const start = parseTime(a.startTime, date);
++   const end = parseTime(a.endTime, date);
+    return now >= start && now <= end;
+  });
+  setCurrentIndex(index >= 0 ? index : null);
+};
 
-    // If an activity is live, set it; otherwise, clear
-    setCurrentIndex(index >= 0 ? index : null);
-  };
 
   const current = showActivity(currentIndex);
   const prev = showActivity((currentIndex ?? -1) - 1);
