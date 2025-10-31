@@ -27,7 +27,7 @@ const LiveSection = ({ activities, date }) => {
     };
 
     checkCurrentActivity();
-    const interval = setInterval(checkCurrentActivity, 60000);
+const interval = setInterval(checkCurrentActivity, 10000); 
     return () => clearInterval(interval);
   }, [activities, date]);
 
@@ -54,8 +54,8 @@ const LiveSection = ({ activities, date }) => {
   const goCurrent = () => {
     const now = new Date();
     const index = activities.findIndex((a) => {
-      const start = parseTime(a.startTime);
-      const end = parseTime(a.endTime);
+    const start = parseTime(a.startTime, date);
+const end = parseTime(a.endTime, date);
       return now >= start && now <= end;
     });
 
