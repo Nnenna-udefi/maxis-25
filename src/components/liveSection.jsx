@@ -20,15 +20,18 @@ useEffect(() => {
     });
 
     // Debug: print parsed times for all activities
-    activities.forEach((a) => {
-      const start = parseTime(a.startTime, date);
-      const end = parseTime(a.endTime, date);
-      console.log(
-        `${a.name}: ${a.startTime}–${a.endTime}`,
-        "→ start:", start.toLocaleString(),
-        "end:", end.toLocaleString()
-      );
-    });
+  activities.forEach((a) => {
+  const start = parseTime(a.startTime, date);
+  const end = parseTime(a.endTime, date);
+  console.log(
+    `${a.name}: ${a.startTime}–${a.endTime}`,
+    "→ start:", start.toLocaleString(),
+    "end:", end.toLocaleString()
+  );
+});
+console.log("⏰ Now:", now.toLocaleString());
+console.log("Parsed dateStr:", baseDate.toString());
+
 
     // Update UI states
     setCurrentIndex(index >= 0 ? index : null);
