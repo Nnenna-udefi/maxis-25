@@ -30,6 +30,7 @@ const LiveSection = ({ activities, date }) => {
 const interval = setInterval(checkCurrentActivity, 10000); 
     return () => clearInterval(interval);
   }, [activities, date]);
+console.log('Start:', start, 'End:', end, 'Now:', now);
 
   const showActivity = (index) => {
     if (index < 0 || index >= activities.length) return null;
