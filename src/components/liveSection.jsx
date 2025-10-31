@@ -30,7 +30,7 @@ useEffect(() => {
   );
 });
 console.log("⏰ Now:", now.toLocaleString());
-console.log("Parsed dateStr:", baseDate.toString());
+
 
 
     // Update UI states
