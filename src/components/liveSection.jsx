@@ -11,23 +11,40 @@ useEffect(() => {
   const checkCurrentActivity = () => {
     const now = new Date();
     console.log("⏰ Checking current activity at:", now.toLocaleTimeString());
+
+    // Find which activity is currently live
     const index = activities.findIndex((a) => {
       const start = parseTime(a.startTime, date);
       const end = parseTime(a.endTime, date);
       return now >= start && now <= end;
     });
 
+    // Debug: print parsed times for all activities
+    activities.forEach((a) => {
+      const start = parseTime(a.startTime, date);
+      const end = parseTime(a.endTime, date);
+      console.log(
+        `${a.name}: ${a.startTime}–${a.endTime}`,
+        "→ start:", start.toLocaleString(),
+        "end:", end.toLocaleString()
+      );
+    });
+
+    // Update UI states
     setCurrentIndex(index >= 0 ? index : null);
 
     const lastEnd = parseTime(activities[activities.length - 1].endTime, date);
     setEventEnded(now > lastEnd);
   };
 
+  // Run immediately once
   checkCurrentActivity();
 
+  // Check every 10 seconds
   const interval = setInterval(checkCurrentActivity, 10000);
   return () => clearInterval(interval);
 }, [activities, date]);
+
 
   const showActivity = (index) => {
     if (index < 0 || index >= activities.length) return null;
