@@ -111,7 +111,7 @@ const LiveSection = ({ activities, date }) => {
                 <h1>Live Now</h1>
               </div>
 
-              <div className="p-3 md:px-5 bg-[#97a9ec] border-l-4 border-[#1338be] w-full">
+              <div className="px-6 py-3 bg-[#97a9ec] border-l-4 border-[#1338be] w-full">
                 <p className="text-sm md:text-base text-black">
                   {current.startTime} - {current.endTime}
                 </p>

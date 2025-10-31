@@ -16,7 +16,7 @@ const Home = () => {
     <div>
       <Nav />
       <div
-        className=" p-6 md:px-12 md:pt-12 md:pb-4 min-h-screen"
+        className=" py-6 px-2 md:px-12 md:pt-12 md:pb-4 min-h-screen"
         style={{
           backgroundColor: "#111",
           backgroundImage:
