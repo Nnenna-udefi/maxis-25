@@ -299,14 +299,15 @@ export function parseTime(timeStr, dateStr) {
     [hours, minutes] = timeStr.split(":").map(Number);
   }
 
+  // );
+
   return new Date(
     baseDate.getFullYear(),
     baseDate.getMonth(),
     baseDate.getDate(),
     hours,
     minutes,
-    0,   // seconds
-    0    // milliseconds
+    0, // seconds
+    0 // milliseconds
   );
-
 }
