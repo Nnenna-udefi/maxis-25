@@ -309,5 +309,4 @@ export function parseTime(timeStr, dateStr) {
     0    // milliseconds
   );
 
-  console.log("Parsed dateStr:", baseDate.toString());
 }
