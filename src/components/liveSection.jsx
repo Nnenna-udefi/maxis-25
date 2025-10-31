@@ -10,7 +10,7 @@ const LiveSection = ({ activities, date }) => {
 useEffect(() => {
   const checkCurrentActivity = () => {
     const now = new Date();
-    console.log("⏰ Checking current activity at:", now.toLocaleTimeString());
+   
 
     // Find which activity is currently live
 const index = activities.findIndex((a) => {
@@ -30,9 +30,6 @@ const index = activities.findIndex((a) => {
     "end:", end.toLocaleString()
   );
 });
-console.log("⏰ Now:", now.toLocaleString());
-
-
 
     // Update UI states
     setCurrentIndex(index >= 0 ? index : null);
