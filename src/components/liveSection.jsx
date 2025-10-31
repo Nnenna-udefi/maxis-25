@@ -13,11 +13,12 @@ useEffect(() => {
     console.log("⏰ Checking current activity at:", now.toLocaleTimeString());
 
     // Find which activity is currently live
-    const index = activities.findIndex((a) => {
-      const start = parseTime(a.startTime, date);
-      const end = parseTime(a.endTime, date);
-      return now >= start && now <= end;
-    });
+const index = activities.findIndex((a) => {
+  const start = parseTime(a.startTime, a.date);
+  const end = parseTime(a.endTime, a.date);
+  return now >= start && now <= end;
+});
+
 
     // Debug: print parsed times for all activities
   activities.forEach((a) => {
